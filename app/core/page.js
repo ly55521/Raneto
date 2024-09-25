@@ -9,7 +9,7 @@ async function handler(filePath, config) {
   const contentDir = utils.normalizeDir(path.normalize(config.content_dir));
 
   try {
-    const file = await fs.readFile(filePath);
+    const file = await fs.readFile(contentDir+filePath);
     let slug = utils.getSlug(filePath, contentDir);
 
     if (slug.indexOf('index.md') > -1) {
