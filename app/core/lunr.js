@@ -4,8 +4,10 @@ import lunr_stemmer from 'lunr-languages/lunr.stemmer.support.js';
 import lunr_multi from 'lunr-languages/lunr.multi.js';
 import lunr_tinyseg from 'lunr-languages/tinyseg.js';
 // Languages
-import lunr_ru from 'lunr-languages/lunr.ru.js';
+// import lunr_ru from 'lunr-languages/lunr.ru.js';
+import lunr_ru from 'lunr-languages/lunr.zh.js';
 // TODO: Add more languages, "ru" was the only found config for "searchExtraLanguages"
+
 
 let instance = null;
 let stemmers = null;
@@ -17,7 +19,7 @@ function getLunr(config) {
     lunr_multi(instance);
     lunr_tinyseg(instance);
     config.searchExtraLanguages.forEach((lang) => {
-      if (lang === 'ru') {
+      if (lang === 'zh') {
         lunr_ru(instance);
       }
     });
